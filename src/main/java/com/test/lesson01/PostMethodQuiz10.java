@@ -30,6 +30,8 @@ public class PostMethodQuiz10 extends HttpServlet{
 		String password = request.getParameter("password");
 		PrintWriter out = response.getWriter();
 		
+		// 주석 추가
+		
 		if(userId.equals(userMap.get("id"))) {
 			out.print("아이디가 일치하지 않습니다");
 		}else if(password.equals(userMap.get("password"))) {
