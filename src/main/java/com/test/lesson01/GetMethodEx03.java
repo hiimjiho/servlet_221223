@@ -22,6 +22,8 @@ public class GetMethodEx03  extends HttpServlet{
 		// age가 없으면 null이다.
 		int age = Integer.parseInt(request.getParameter("age"));
 		
+		// 클론 후 주석추가
+		
 		PrintWriter out = response.getWriter();
 //		out.println("응답");
 //		out.println("user_id:" + userId);
