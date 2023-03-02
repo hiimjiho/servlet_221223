@@ -1,0 +1,27 @@
+package com.test.lesson01;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+public class UrlMappingQuiz01 extends HttpServlet{
+	@Override
+	public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+		response.setContentType("text/plain");
+		response.setCharacterEncoding("utf-8");
+		PrintWriter out = response.getWriter();
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy년 MM월 dd일");
+		
+		Date now = new Date();
+		out.println("오늘의 날짜는 " + sdf.format(now));
+		
+		SimpleDateFormat sdf2 = new SimpleDateFormat("HH시 mm분 ss초");
+		out.println("현재 시간은 " + sdf2.format(now));
+	}
+
+}
