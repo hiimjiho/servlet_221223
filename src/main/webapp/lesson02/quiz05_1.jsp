@@ -11,6 +11,7 @@
 </head>
 <body>
 	<%
+		// 클론 후 주석 추가
 		int cm = Integer.parseInt(request.getParameter("cm"));
 		String[] typeArr = request.getParameterValues("type");		// checkbox처럼 여러 파라미터가 넘어올 때 getParameterValues
 		
