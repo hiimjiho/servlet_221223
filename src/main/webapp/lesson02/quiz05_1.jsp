@@ -13,28 +13,38 @@
 	<%
 		// 클론 후 주석 추가
 		int cm = Integer.parseInt(request.getParameter("cm"));
-		String[] typeArr = request.getParameterValues("type");		// checkbox처럼 여러 파라미터가 넘어올 때 getParameterValues
+		String[] types = request.getParameterValues("type");		// checkbox처럼 여러 파라미터가 넘어올 때 getParameterValues
 		
 		double result = 0;
 		
-		for(int i = 1; i <= typeArr.length; i++){
-			if(typeArr[i] == "inch"){
-				result = cm / 2.54;
-			}if(typeArr[i] == "yard"){
-				result = cm * 0.01;
-			}if(typeArr[i] == "feet"){
-				result = cm * 0.032;
-			}if(typeArr[i] == "meter"){
-				result = cm * 0.01;
-			}
-		}
+	
 	%>
 	
 	<div class="container">
 		<h1>길이 변환 결과</h1>
 		<h3><%=cm %>cm</h3>
 		<hr>
-		<h3><%=result %></h3>
+		<h2>
+			<%
+				if(types != null){
+					for(String type : types){	// inch, yard, meter
+						if(type.equals("inch")){
+							double inch = cm * 0.393701;
+							out.print(inch + "in<br>");
+						} else if(type.equals("yard")){
+							double yard = cm * 0.0109361;
+							out.print(yard + "yd<br>");
+						} else if(type.equals("feet")){
+							double feet = cm * 0.0328084;
+							out.print(feet + "fr<br>");
+						} else if(type.equals("meter")){
+							double meter = cm / 100.0;
+							out.print(meter +"m<br>");
+						}
+					}
+				}	
+			%>
+		</h2>
 	</div>
 </body>
 </html>
