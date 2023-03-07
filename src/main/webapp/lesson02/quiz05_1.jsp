@@ -17,11 +17,15 @@
 		
 		double result = 0;
 		
-		for(int i = 0; i < typeArr.length; i++){
+		for(int i = 1; i <= typeArr.length; i++){
 			if(typeArr[i] == "inch"){
 				result = cm / 2.54;
 			}if(typeArr[i] == "yard"){
-				
+				result = cm * 0.01;
+			}if(typeArr[i] == "feet"){
+				result = cm * 0.032;
+			}if(typeArr[i] == "meter"){
+				result = cm * 0.01;
 			}
 		}
 	%>
@@ -30,6 +34,7 @@
 		<h1>길이 변환 결과</h1>
 		<h3><%=cm %>cm</h3>
 		<hr>
+		<h3><%=result %></h3>
 	</div>
 </body>
 </html>
