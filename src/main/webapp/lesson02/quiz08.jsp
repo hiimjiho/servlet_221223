@@ -60,25 +60,28 @@
 
 	<div class="container">
 		<h1 class="text-center">책 목록</h1>
-		<table>
+		<table class="table text-center">
 			<thead>
-				<tr>
-					<th>id</th>
-					<th>표지</th>
-					<th>제목</th>
+				<tr class="row">
+					<th class="col-1">id</th>
+					<th class="col-2">표지</th>
+					<th class="col-9">제목</th>
 				<tr>
 			</thead>
 			<tbody>
 			<%
-				
+				for(Map<String, Object> item : list) {
 			%>
-				<tr>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
+				<tr class="row">
+					<td class="col-1"><%= item.get("id") %></td>
+					<td class="col-2"><img src="<%= item.get("image") %>" alt="표지" width="50px"></td>
+					<td class="col-9">
+						<a href="/lesson02/quiz08_1.jsp?id=<%= item.get("id") %>"><%= item.get("title") %></a>
+					</td>
 				</tr>
-			<% %>
+			<%
+				}
+			%>
 			</tbody>
 		</table>
 	</div>
