@@ -61,7 +61,7 @@ footer{height:50px;}
 
 	<div id="wrap" class="container">
 		<header class="bg-dark">
-			<h2 class="text-danger text-center">SK Broadband IPTV</h2>
+			<h2 class="text-danger text-center text-align-center font-weight-bold">SK Broadband IPTV</h2>
 		</header>
 		<nav class="bg-danger d-flex align-items-end">
 			<ul class="nav nav-fill font-weight-bold">
