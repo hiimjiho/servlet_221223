@@ -14,7 +14,7 @@
 <style>
 header{height:100px;}
 nav{height:50px;}
-.contents{height:800px;}
+.contents{height:1000px;}
 footer{height:50px;}
 </style>
 </head>
@@ -59,15 +59,39 @@ footer{height:50px;}
     list.add(map);
 %>
 
-	<div id="wrap">
+	<div id="wrap" class="container">
 		<header class="bg-dark">
 			<h2 class="text-danger text-center">SK Broadband IPTV</h2>
 		</header>
-		<nav class="bg-info">
-			
+		<nav class="bg-danger d-flex align-items-end">
+			<ul class="nav nav-fill font-weight-bold">
+				<li class="nav-item nav-link">전체</li>
+				<li class="nav-item nav-link">지상파</li>
+				<li class="nav-item nav-link">드라마</li>
+				<li class="nav-item nav-link">예능</li>
+				<li class="nav-item nav-link">영화</li>
+				<li class="nav-item nav-link">스포츠</li>
+			</ul>
 		</nav>
-		<section class="contents bg-danger">
-			
+		<section class="contents bg-info">
+			<table class="table text-center">
+				<tr>
+					<th>채널</th>
+					<th>채널명</th>
+					<th>카테고리</th>
+				</tr>
+				<%
+					for(Map<String, String> item:list){
+				%>
+				<tr>
+					<td><%=item.get("ch") %></td>
+					<td><%=item.get("name") %></td>
+					<td><%=item.get("category") %></td>
+				</tr>
+				<%
+					}
+				%>
+			</table>
 		</section>
 		<footer class="bg-warning text-center">
 			Copyright © marondal 2021
