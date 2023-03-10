@@ -146,7 +146,7 @@ footer{height:50px;}
 					%>
 						<tr>
 							<td><%=item.get("id")%></td>
-							<td><%=item.get("title")%></td>
+							<td><a href=""><%=item.get("title")%></a></td>
 							<td><%=item.get("album")%></td>
 						</tr>
 						
