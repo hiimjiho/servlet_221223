@@ -10,22 +10,20 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.test.com.MysqlService;
 
-@WebServlet("/lesson04/insert_quiz02")
-public class InsertQuiz02 extends HttpServlet{
+@WebServlet("/lesson04/delete_quiz02")
+public class DeleteQuiz02 extends HttpServlet{
 	@Override
-	public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
-		String name = request.getParameter("name");
-		String url = request.getParameter("url");
+	public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+		//request Parameter 삭제할 파라미터
+		int id = Integer.valueOf(request.getParameter("id"));
 		
+		// db 연결
 		MysqlService ms = MysqlService.getInstance();
 		ms.connect();
 		
-		String insertQuery = "insert into `site`(`name`,`url`)"
-				+ "values('" + name + "', '"  
-				+ url + "')";
-		
+		String deleteQuery = "DELETE FROM `site` where `id` = " + id;
 		try {
-			ms.update(insertQuery);
+			ms.update(deleteQuery);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -33,7 +31,5 @@ public class InsertQuiz02 extends HttpServlet{
 		ms.disconnect();
 		
 		response.sendRedirect("/lesson04/quiz02.jsp");
-		
-		
 	}
 }

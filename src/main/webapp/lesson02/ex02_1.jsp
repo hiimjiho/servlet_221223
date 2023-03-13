@@ -1,19 +1,19 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <title>get Method</title>
 </head>
 <body>
-	<b>¾ְֶּµנ</b>
+	<b>ל•„ל´כ””</b>
 	<%= request.getParameter("user_id") %>
 	<br>
-	<b>ְּ¸§</b>
-	<%=request.getParameter("name") %>
+	<b>ל´כ¦„</b>
+	<%= request.getParameter("name") %>
 	<br>
-	<b>³×ְּ</b>
-	<%=request.getParameter("age") %>
+	<b>כ‚˜ל´</b>
+	<%= request.getParameter("age") %>
 </body>
 </html>

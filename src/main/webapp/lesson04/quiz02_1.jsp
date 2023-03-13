@@ -11,7 +11,7 @@
 </head>
 <body>
 	<div class="container">
-		<form method="post" action="/lesson04/insertquiz02.jsp">
+		<form method="post" action="/lesson04/insert_quiz02">
 			<h1><b>즐겨찾기 추가</b></h1>
 			<h3>사이트 명:</h3>
 			<input type="text" name="name">
