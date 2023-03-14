@@ -16,7 +16,7 @@
 	MysqlService ms = MysqlService.getInstance();
 	ms.connect();
 	
-	String selectQuery = "select * from `site`";
+	String selectQuery = "select * from `site` order by `id` desc";
 	ResultSet res = ms.select(selectQuery);
 %>
 <div class="container">
